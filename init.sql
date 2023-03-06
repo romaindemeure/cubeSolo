@@ -18,3 +18,13 @@ CREATE TABLE tableSite (
   Ville varchar(255) NOT NULL,
   PRIMARY KEY(IdVille)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE tableService (
+  IdService int AUTO_INCREMENT,
+  Comptabilite varchar(255) NOT NULL,
+  Production varchar(255) NOT NULL,
+  Accueil varchar(255) NOT NULL,
+  Informatique varchar(255) NOT NULL,
+  Commercial varchar(255) NOT NULL,
+  PRIMARY KEY(IdService)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
