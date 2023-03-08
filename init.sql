@@ -3,15 +3,18 @@ CREATE TABLE tableUtilisateur (
   prenomUtilisateur varchar(255) NOT NULL,
   nomUtilisateur varchar(255) NOT NULL,
   emailUtilisateur varchar(255) NOT NULL,
-  motDePasseUtilisateur varchar(255) NOT NULL,
+  motDePasseUtilisateur varchar(255),
   telephoneFixUtilisateur varchar(255) NOT NULL,
   telephonePortableUtilisateur varchar(255) NOT NULL,
-  service varchar(255) NOT NULL,
-  site varchar(255) NOT NULL,
+  -- service varchar(255) NOT NULL,
+  -- site varchar(255) NOT NULL,
   administrateur tinyint(1) NOT NULL DEFAULT 0,
+  site_id int NOT NULL,
+  service_id int NOT NULL,
+  FOREIGN KEY (site_id) REFERENCES tableSite (IdVille),
+  FOREIGN KEY (service_id) REFERENCES tableService (IdService),
   PRIMARY KEY(IdUtilisateur)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 CREATE TABLE tableSite (
   IdVille int AUTO_INCREMENT,
